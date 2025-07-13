@@ -1,0 +1,12 @@
+class Solution:
+    def addDigits(self, num: int) -> int:
+        sum=0
+        if num > 0:
+           while num >=10 :
+                quo1,rem1=divmod(num,10)
+                num=quo1+rem1
+           return num
+        
+        else :
+            return 0
+
