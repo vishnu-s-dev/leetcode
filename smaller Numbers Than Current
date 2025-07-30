@@ -1,0 +1,22 @@
+class Solution:
+    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+        n=len(nums)
+        arr=[]
+        sortedarr=sorted(nums)
+        rank= {}   # hashtable
+        for i in range(n):
+            noo=sortedarr[i]
+            if noo not in rank:
+                rank[noo]=i
+        for num in nums:
+            arr.append(rank[num])
+        return(arr)
+
+
+# nums = [8, 1, 2, 2, 3]:
+
+# Sorted: [1, 2, 2, 3, 8]
+
+# Rank: {1:0, 2:1, 3:3, 8:4}
+
+# Result: [4, 0, 1, 1, 3]
